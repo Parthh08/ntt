@@ -690,7 +690,7 @@ class _SeedsToShineHomePageState extends State<SeedsToShineHomePage>
                                   ),
                                   child: FaIcon(
                                     contactInfo[index]['icon'] as IconData,
-                                    color: const Color(0xFF1A237E),
+                                    color: const Color(0xFF2E7D32), // Deep green
                                     size: 22,
                                   ),
                                 ),

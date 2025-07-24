@@ -98,7 +98,7 @@ class _SeedsToShineHomePageState extends State<SeedsToShineHomePage> {
                     ),
                   ),
                   const SizedBox(height: 30),
-                  
+
                   // Title
                   Text(
                     'SEEDS TO SHINE',
@@ -110,7 +110,7 @@ class _SeedsToShineHomePageState extends State<SeedsToShineHomePage> {
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 16),
-                  
+
                   // Subtitle
                   Container(
                     padding: const EdgeInsets.symmetric(
@@ -194,48 +194,52 @@ class _SeedsToShineHomePageState extends State<SeedsToShineHomePage> {
                       textAlign: TextAlign.center,
                     ),
                     const SizedBox(height: 30),
-                    
+
                     // Features List
-                    ...['🎓 Government Recognized Certification',
-                         '👩‍🏫 Experienced & Caring Faculty', 
-                         '🤝 Practical Training + Internship Support',
-                         '🚀 100% Placement Assistance'].map((feature) => 
-                      Container(
-                        margin: const EdgeInsets.only(bottom: 15),
-                        padding: const EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.15),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Row(
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: const Icon(
-                                Icons.check_circle,
-                                color: Color(0xFF2E7D32),
-                                size: 20,
-                              ),
+                    ...[
+                          '🎓 Government Recognized Certification',
+                          '👩‍🏫 Experienced & Caring Faculty',
+                          '🤝 Practical Training + Internship Support',
+                          '🚀 100% Placement Assistance',
+                        ]
+                        .map(
+                          (feature) => Container(
+                            margin: const EdgeInsets.only(bottom: 15),
+                            padding: const EdgeInsets.all(15),
+                            decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.15),
+                              borderRadius: BorderRadius.circular(10),
                             ),
-                            const SizedBox(width: 15),
-                            Expanded(
-                              child: Text(
-                                feature,
-                                style: GoogleFonts.poppins(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.white,
+                            child: Row(
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: const Icon(
+                                    Icons.check_circle,
+                                    color: Color(0xFF2E7D32),
+                                    size: 20,
+                                  ),
                                 ),
-                              ),
+                                const SizedBox(width: 15),
+                                Expanded(
+                                  child: Text(
+                                    feature,
+                                    style: GoogleFonts.poppins(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
-                      ),
-                    ).toList(),
+                          ),
+                        )
+                        .toList(),
                   ],
                 ),
               ),
@@ -265,7 +269,7 @@ class _SeedsToShineHomePageState extends State<SeedsToShineHomePage> {
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 20),
-                  
+
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton.icon(
@@ -305,10 +309,7 @@ class _SeedsToShineHomePageState extends State<SeedsToShineHomePage> {
         icon: const FaIcon(FontAwesomeIcons.envelope, size: 20),
         label: Text(
           'Contact Us',
-          style: GoogleFonts.poppins(
-            fontWeight: FontWeight.w600,
-            fontSize: 16,
-          ),
+          style: GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 16),
         ),
         backgroundColor: const Color(0xFF2E7D32),
         foregroundColor: Colors.white,
@@ -321,9 +322,7 @@ class _SeedsToShineHomePageState extends State<SeedsToShineHomePage> {
       margin: const EdgeInsets.all(20),
       child: Card(
         elevation: 8,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
         child: Container(
           decoration: BoxDecoration(
             gradient: const LinearGradient(
@@ -345,7 +344,7 @@ class _SeedsToShineHomePageState extends State<SeedsToShineHomePage> {
                 ),
               ),
               const SizedBox(height: 30),
-              
+
               // Email Contact
               _buildContactItem(
                 FontAwesomeIcons.envelope,
@@ -354,7 +353,7 @@ class _SeedsToShineHomePageState extends State<SeedsToShineHomePage> {
                 () => _sendEmail(),
               ),
               const SizedBox(height: 20),
-              
+
               // Location Contact
               _buildContactItem(
                 FontAwesomeIcons.locationDot,
@@ -369,7 +368,12 @@ class _SeedsToShineHomePageState extends State<SeedsToShineHomePage> {
     );
   }
 
-  Widget _buildContactItem(IconData icon, String title, String subtitle, VoidCallback onTap) {
+  Widget _buildContactItem(
+    IconData icon,
+    String title,
+    String subtitle,
+    VoidCallback onTap,
+  ) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -377,10 +381,7 @@ class _SeedsToShineHomePageState extends State<SeedsToShineHomePage> {
         decoration: BoxDecoration(
           color: Colors.white.withOpacity(0.15),
           borderRadius: BorderRadius.circular(15),
-          border: Border.all(
-            color: Colors.white.withOpacity(0.3),
-            width: 1,
-          ),
+          border: Border.all(color: Colors.white.withOpacity(0.3), width: 1),
         ),
         child: Row(
           children: [
@@ -390,11 +391,7 @@ class _SeedsToShineHomePageState extends State<SeedsToShineHomePage> {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(12),
               ),
-              child: FaIcon(
-                icon,
-                color: const Color(0xFF2E7D32),
-                size: 22,
-              ),
+              child: FaIcon(icon, color: const Color(0xFF2E7D32), size: 22),
             ),
             const SizedBox(width: 20),
             Expanded(
@@ -420,11 +417,7 @@ class _SeedsToShineHomePageState extends State<SeedsToShineHomePage> {
                 ],
               ),
             ),
-            const Icon(
-              Icons.arrow_forward_ios,
-              color: Colors.white,
-              size: 16,
-            ),
+            const Icon(Icons.arrow_forward_ios, color: Colors.white, size: 16),
           ],
         ),
       ),
@@ -435,7 +428,8 @@ class _SeedsToShineHomePageState extends State<SeedsToShineHomePage> {
     final Uri launchUri = Uri(
       scheme: 'mailto',
       path: emailAddress,
-      query: 'subject=NTT Course Inquiry&body=Hello, I would like to know more about the NTT course.',
+      query:
+          'subject=NTT Course Inquiry&body=Hello, I would like to know more about the NTT course.',
     );
     if (await canLaunchUrl(launchUri)) {
       await launchUrl(launchUri);
@@ -456,17 +450,18 @@ class _SeedsToShineHomePageState extends State<SeedsToShineHomePage> {
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
-      builder: (context) => Container(
-        height: MediaQuery.of(context).size.height * 0.85,
-        decoration: const BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30),
-            topRight: Radius.circular(30),
+      builder:
+          (context) => Container(
+            height: MediaQuery.of(context).size.height * 0.85,
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30),
+              ),
+            ),
+            child: const ContactForm(),
           ),
-        ),
-        child: const ContactForm(),
-      ),
     );
   }
 }
@@ -556,8 +551,9 @@ class _ContactFormState extends State<ContactForm> {
                         if (value == null || value.isEmpty) {
                           return 'Please enter your email';
                         }
-                        if (!RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
-                            .hasMatch(value)) {
+                        if (!RegExp(
+                          r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$',
+                        ).hasMatch(value)) {
                           return 'Please enter a valid email';
                         }
                         return null;
@@ -586,24 +582,25 @@ class _ContactFormState extends State<ContactForm> {
                             borderRadius: BorderRadius.circular(28),
                           ),
                         ),
-                        child: _isSubmitting
-                            ? const SizedBox(
-                                width: 24,
-                                height: 24,
-                                child: CircularProgressIndicator(
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                    Colors.white,
+                        child:
+                            _isSubmitting
+                                ? const SizedBox(
+                                  width: 24,
+                                  height: 24,
+                                  child: CircularProgressIndicator(
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                      Colors.white,
+                                    ),
+                                    strokeWidth: 2,
                                   ),
-                                  strokeWidth: 2,
+                                )
+                                : Text(
+                                  'Send Message',
+                                  style: GoogleFonts.poppins(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
-                              )
-                            : Text(
-                                'Send Message',
-                                style: GoogleFonts.poppins(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
                       ),
                     ),
                   ],
@@ -640,11 +637,7 @@ class _ContactFormState extends State<ContactForm> {
             color: const Color(0xFF2E7D32).withOpacity(0.1),
             borderRadius: BorderRadius.circular(10),
           ),
-          child: FaIcon(
-            icon,
-            color: const Color(0xFF2E7D32),
-            size: 18,
-          ),
+          child: FaIcon(icon, color: const Color(0xFF2E7D32), size: 18),
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
@@ -656,10 +649,7 @@ class _ContactFormState extends State<ContactForm> {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: const BorderSide(
-            color: Color(0xFF2E7D32),
-            width: 2,
-          ),
+          borderSide: const BorderSide(color: Color(0xFF2E7D32), width: 2),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),

@@ -7,47 +7,50 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(const NTTApp());
+  runApp(const SeedsToShineApp());
 }
 
-class NTTApp extends StatelessWidget {
-  const NTTApp({super.key});
+class SeedsToShineApp extends StatelessWidget {
+  const SeedsToShineApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'NTT Center - Rajnandgaon',
+      title: 'Seeds to Shine Academy - NTT Coaching Classes',
       theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFBF4F36)),
+        primarySwatch: Colors.green,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF2E7D32), // Deep green from logo
+          secondary: const Color(0xFFFF8F00), // Orange from logo
+        ),
         textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             elevation: 8,
-            shadowColor: Colors.deepOrange.withOpacity(0.4),
+            shadowColor: Colors.green.withOpacity(0.4),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
             ),
           ),
         ),
       ),
-      home: const NTTHomePage(),
+      home: const SeedsToShineHomePage(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
-class NTTHomePage extends StatefulWidget {
-  const NTTHomePage({super.key});
+class SeedsToShineHomePage extends StatefulWidget {
+  const SeedsToShineHomePage({super.key});
 
   @override
-  State<NTTHomePage> createState() => _NTTHomePageState();
+  State<SeedsToShineHomePage> createState() => _SeedsToShineHomePageState();
 }
 
-class _NTTHomePageState extends State<NTTHomePage>
+class _SeedsToShineHomePageState extends State<SeedsToShineHomePage>
     with TickerProviderStateMixin {
-  static const String phoneNumber = '7000xxxxxx';
-  static const String emailAddress = 'nttcenter.rajnandgaon@gmail.com';
+  static const String phoneNumber = '7000217171';
+  static const String emailAddress = 'seedtoshineNTT@gmail.com';
   static const String address = 'Rajnandgaon, Chhattisgarh, India';
   static const double latitude = 21.0972;
   static const double longitude = 81.0364;
@@ -100,15 +103,15 @@ class _NTTHomePageState extends State<NTTHomePage>
               expandedHeight: 350,
               floating: false,
               pinned: true,
-              backgroundColor: const Color(0xFFBF4F36),
+              backgroundColor: const Color(0xFF2E7D32), // Deep green from logo
               flexibleSpace: FlexibleSpaceBar(
                 title: FadeInUp(
                   delay: const Duration(milliseconds: 600),
                   child: Text(
-                    'NTT CENTER',
+                    'SEEDS TO SHINE ACADEMY',
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.bold,
-                      fontSize: 18,
+                      fontSize: 16,
                       color: Colors.white,
                     ),
                   ),
@@ -119,9 +122,9 @@ class _NTTHomePageState extends State<NTTHomePage>
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                       colors: [
-                        Color(0xFFBF4F36),
-                        Color(0xFFD35F42),
-                        Color(0xFFE67E22),
+                        Color(0xFF2E7D32), // Deep green
+                        Color(0xFF4CAF50), // Medium green
+                        Color(0xFF66BB6A), // Light green
                       ],
                     ),
                   ),
@@ -136,14 +139,37 @@ class _NTTHomePageState extends State<NTTHomePage>
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                const SizedBox(height: 60),
+                                const SizedBox(height: 50),
+                                // Logo placeholder (you can add the actual logo image here)
+                                Container(
+                                  width: 80,
+                                  height: 80,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(40),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black.withOpacity(0.2),
+                                        spreadRadius: 2,
+                                        blurRadius: 10,
+                                        offset: const Offset(0, 5),
+                                      ),
+                                    ],
+                                  ),
+                                  child: const Icon(
+                                    Icons.local_florist,
+                                    size: 40,
+                                    color: Color(0xFF2E7D32),
+                                  ),
+                                ),
+                                const SizedBox(height: 20),
                                 // Animated title
                                 AnimatedTextKit(
                                   animatedTexts: [
                                     TypewriterAnimatedText(
-                                      'NTT CENTER',
+                                      'SEEDS TO SHINE',
                                       textStyle: GoogleFonts.poppins(
-                                        fontSize: 42,
+                                        fontSize: 38,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.white,
                                         shadows: [
@@ -168,7 +194,9 @@ class _NTTHomePageState extends State<NTTHomePage>
                                       vertical: 8,
                                     ),
                                     decoration: BoxDecoration(
-                                      color: Colors.yellow[400],
+                                      color: const Color(
+                                        0xFFFF8F00,
+                                      ), // Orange from logo
                                       borderRadius: BorderRadius.circular(25),
                                       boxShadow: [
                                         BoxShadow(
@@ -180,11 +208,11 @@ class _NTTHomePageState extends State<NTTHomePage>
                                       ],
                                     ),
                                     child: Text(
-                                      'NOW IN RAJNANDGAON!',
+                                      'NTT COACHING CLASSES',
                                       style: GoogleFonts.poppins(
-                                        fontSize: 18,
+                                        fontSize: 16,
                                         fontWeight: FontWeight.w700,
-                                        color: const Color(0xFFBF4F36),
+                                        color: Colors.white,
                                       ),
                                     ),
                                   ),
@@ -212,7 +240,10 @@ class _NTTHomePageState extends State<NTTHomePage>
                     margin: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
                       gradient: const LinearGradient(
-                        colors: [Colors.white, Color(0xFFFFF8E1)],
+                        colors: [
+                          Colors.white,
+                          Color(0xFFF1F8E9),
+                        ], // Light green tint
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
@@ -231,11 +262,11 @@ class _NTTHomePageState extends State<NTTHomePage>
                         SlideInDown(
                           delay: const Duration(milliseconds: 500),
                           child: Text(
-                            'Chhattisgarh\'s Own Hub for\nNursery Teacher Training',
+                            '🌱 Where Seeds of Knowledge Grow into Bright Futures 🌟',
                             style: GoogleFonts.poppins(
                               fontSize: 24,
                               fontWeight: FontWeight.w700,
-                              color: const Color(0xFFBF4F36),
+                              color: const Color(0xFF2E7D32), // Deep green
                               height: 1.3,
                             ),
                             textAlign: TextAlign.center,
@@ -285,7 +316,10 @@ class _NTTHomePageState extends State<NTTHomePage>
                       child: Container(
                         decoration: BoxDecoration(
                           gradient: const LinearGradient(
-                            colors: [Color(0xFFBF4F36), Color(0xFFE67E22)],
+                            colors: [
+                              Color(0xFF2E7D32),
+                              Color(0xFF4CAF50),
+                            ], // Green gradient
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                           ),
@@ -307,9 +341,9 @@ class _NTTHomePageState extends State<NTTHomePage>
                                   ),
                                 ),
                                 child: Text(
-                                  'Admissions Open for NTT\n(Nursery Teacher Training) Course',
+                                  '🌟 Join Seeds to Shine Academy 🌟\nNTT (Nursery Teacher Training) Course\nAdmissions Open!',
                                   style: GoogleFonts.poppins(
-                                    fontSize: 24,
+                                    fontSize: 22,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white,
                                     height: 1.3,
@@ -321,16 +355,16 @@ class _NTTHomePageState extends State<NTTHomePage>
                             const SizedBox(height: 30),
                             ...List.generate(4, (index) {
                               final features = [
-                                'Government Recognized Certification',
-                                'Experienced Faculty',
-                                'Practical Training + Internship Support',
-                                '100% Placement Assistance',
+                                '🎓 Government Recognized Certification',
+                                '👩‍🏫 Experienced & Caring Faculty',
+                                '🤝 Practical Training + Internship Support',
+                                '🚀 100% Placement Assistance',
                               ];
                               final icons = [
-                                FontAwesomeIcons.certificate,
-                                FontAwesomeIcons.chalkboardUser,
+                                FontAwesomeIcons.seedling, // Growth theme
+                                FontAwesomeIcons.users, // Community theme
                                 FontAwesomeIcons.handshake,
-                                FontAwesomeIcons.chartLine,
+                                FontAwesomeIcons.trophy, // Success theme
                               ];
 
                               return AnimationConfiguration.staggeredList(
@@ -383,7 +417,9 @@ class _NTTHomePageState extends State<NTTHomePage>
                                             ),
                                             child: FaIcon(
                                               icons[index],
-                                              color: const Color(0xFFBF4F36),
+                                              color: const Color(
+                                                0xFF2E7D32,
+                                              ), // Deep green
                                               size: 24,
                                             ),
                                           ),
@@ -423,14 +459,17 @@ class _NTTHomePageState extends State<NTTHomePage>
                     padding: const EdgeInsets.all(28),
                     decoration: BoxDecoration(
                       gradient: const LinearGradient(
-                        colors: [Color(0xFF2E7D32), Color(0xFF4CAF50)],
+                        colors: [
+                          Color(0xFFFF8F00),
+                          Color(0xFFFFB74D),
+                        ], // Orange gradient from logo
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
                       borderRadius: BorderRadius.circular(25),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.green.withOpacity(0.4),
+                          color: const Color(0xFFFF8F00).withOpacity(0.4),
                           spreadRadius: 0,
                           blurRadius: 20,
                           offset: const Offset(0, 10),
@@ -440,7 +479,7 @@ class _NTTHomePageState extends State<NTTHomePage>
                     child: Column(
                       children: [
                         Text(
-                          '🌟 Empower yourself with the skills to shape young minds! 🌟',
+                          '� Plant the Seeds of Your Teaching Career Today! 🌟\nGrow with Seeds to Shine Academy!',
                           style: GoogleFonts.poppins(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -460,7 +499,7 @@ class _NTTHomePageState extends State<NTTHomePage>
                                   FontAwesomeIcons.phone,
                                   () => _makePhoneCall(),
                                   Colors.white,
-                                  const Color(0xFF2E7D32),
+                                  const Color(0xFF2E7D32), // Deep green
                                 ),
                               ),
                               const SizedBox(width: 16),
@@ -469,7 +508,7 @@ class _NTTHomePageState extends State<NTTHomePage>
                                   'Get Info',
                                   FontAwesomeIcons.circleInfo,
                                   () => _showContactForm(context),
-                                  const Color(0xFF2E7D32),
+                                  const Color(0xFF2E7D32), // Deep green
                                   Colors.white,
                                 ),
                               ),
@@ -509,7 +548,7 @@ class _NTTHomePageState extends State<NTTHomePage>
                     fontSize: 16,
                   ),
                 ),
-                backgroundColor: const Color(0xFFBF4F36),
+                backgroundColor: const Color(0xFF2E7D32), // Deep green
                 foregroundColor: Colors.white,
                 elevation: 15,
                 heroTag: "quick_call",
@@ -562,7 +601,10 @@ class _NTTHomePageState extends State<NTTHomePage>
           child: Container(
             decoration: BoxDecoration(
               gradient: const LinearGradient(
-                colors: [Color(0xFF1A237E), Color(0xFF3F51B5)],
+                colors: [
+                  Color(0xFF2E7D32),
+                  Color(0xFF4CAF50),
+                ], // Deep green to light green
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
@@ -818,11 +860,11 @@ class _ContactFormState extends State<ContactForm>
           FadeInDown(
             delay: const Duration(milliseconds: 200),
             child: Text(
-              '✨ Get in Touch',
+              '🌱 Get in Touch',
               style: GoogleFonts.poppins(
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
-                color: const Color(0xFFBF4F36),
+                color: const Color(0xFF2E7D32), // Deep green
               ),
             ),
           ),
@@ -916,11 +958,13 @@ class _ContactFormState extends State<ContactForm>
                         child: ElevatedButton(
                           onPressed: _isSubmitting ? null : _submitForm,
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFFBF4F36),
+                            backgroundColor: const Color(
+                              0xFF2E7D32,
+                            ), // Deep green
                             foregroundColor: Colors.white,
                             elevation: 8,
                             shadowColor: const Color(
-                              0xFFBF4F36,
+                              0xFF2E7D32,
                             ).withOpacity(0.4),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(28),
@@ -979,10 +1023,16 @@ class _ContactFormState extends State<ContactForm>
           margin: const EdgeInsets.all(12),
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: const Color(0xFFBF4F36).withOpacity(0.1),
+            color: const Color(
+              0xFF2E7D32,
+            ).withOpacity(0.1), // Light green background
             borderRadius: BorderRadius.circular(10),
           ),
-          child: FaIcon(icon, color: const Color(0xFFBF4F36), size: 18),
+          child: FaIcon(
+            icon,
+            color: const Color(0xFF2E7D32),
+            size: 18,
+          ), // Deep green icon
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
@@ -994,7 +1044,10 @@ class _ContactFormState extends State<ContactForm>
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: const BorderSide(color: Color(0xFFBF4F36), width: 2),
+          borderSide: const BorderSide(
+            color: Color(0xFF2E7D32),
+            width: 2,
+          ), // Deep green focused border
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),

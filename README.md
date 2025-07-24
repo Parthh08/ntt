@@ -1,4 +1,4 @@
-# Seeds to Shine Academy - NTT Coaching Classes Web App
+# NTT Center - Rajnandgaon Web App
 
 ## 🌟 Features
 
@@ -60,4 +60,4 @@
 
 ---
 
-**🌟 Transform your teaching career with Seeds to Shine Academy! 🌟**
+**🌟 Transform your teaching career with NTT Center Rajnandgaon! 🌟**

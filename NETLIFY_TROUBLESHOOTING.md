@@ -93,7 +93,7 @@ After deployment, test these features:
 
 ## 📧 **Your Site Features:**
 - 🌱 **Branding:** "Seeds to Shine Academy" with green/orange theme
-- 📞 **Contact:** Phone: 7000217171, Email: seedtoshineNTT@gmail.com
+- 📞 **Contact:** Phone: , Email: seedtoshineNTT@gmail.com
 - 🗺️ **Location:** Rajnandgaon, Chhattisgarh (opens Google Maps)
 - 📱 **Responsive:** Works on all devices
 - ⚡ **Fast:** Optimized with tree-shaken fonts (99%+ reduction)

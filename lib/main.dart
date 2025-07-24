@@ -36,7 +36,7 @@ class SeedsToShineHomePage extends StatefulWidget {
 }
 
 class _SeedsToShineHomePageState extends State<SeedsToShineHomePage> {
-  static const String emailAddress = 'seedstoshineNTT@gmail.com';
+  static const String emailAddress = 'seedstoshinentt@gmail.com';
   static const String address = 'Rajnandgaon, Chhattisgarh, India';
   static const double latitude = 21.0972;
   static const double longitude = 81.0364;
